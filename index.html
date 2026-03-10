@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>App.Support Data V.02.V.2026</title>
+        <title>Gallery Item Jeffan</title>
         <style>
             /* ================= GLOBAL ================= */
             * {
@@ -179,8 +179,41 @@
                     /* lebih kecil di HP */
                 }
             }
+
+            /* ================= IMAGE ZOOM ================= */
+
+            #imageModal {
+                display: none;
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.9);
+                z-index: 9999;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #imageModal img {
+                max-width: 90%;
+                max-height: 90%;
+                border-radius: 10px;
+            }
+
+            #closeZoom {
+                position: absolute;
+                top: 20px;
+                right: 35px;
+                font-size: 40px;
+                color: white;
+                cursor: pointer;
+                font-weight: bold;
+            }
         </style>
     </head>
+    <!-- IMAGE ZOOM MODAL -->
+    <div id="imageModal">
+        <span id="closeZoom">&times;</span>
+        <img id="zoomImg">
+    </div>
 
     <body>
         <!-- ================= MAIN APP LAYOUT ================= -->
@@ -189,7 +222,7 @@
             <aside class="sidebar">
                 <img src="https://www.jeffan.com/secure/extensions/Intente/Jeffan_21_1_0/21.1.0/img/jeffan-logo.png"
                     class="sidebar-logo" alt="Logo Sidebar">
-                <h1>Application Data Support</h1>
+                <h1>Application Gallery Item</h1>
                 <h2>Update.Ver.03.VI.2026</h2>
 
                 <div id="clock-container">
@@ -197,7 +230,7 @@
                     <div id="clock-date">-</div>
                 </div>
                 <div class="container">
-                    <h2>🗂️ Gallery Item Viewer</h2>
+                    <h2>🗂️ Gallery Item Jeffan</h2>
 
                     <label>Select Category:</label>
                     <select id="kategoriSelector"></select>
@@ -265,30 +298,6 @@
                     kategori: "Home Accents",
                     gambar: "https://6694454.app.netsuite.com/c.6694454/item-images/AB2-309612-WH_001.jpg",
                     keterangan: " V309 H.N. Handicrafts SHA 37764, 37764 L // Enamel and Mangowood Boat Bowls, 2 Piece Set, 28.5 Inch W & 24 Inch W, White/Natural, (28.5 Inch W x 8 Inch D x 4.5 Inch H & 24 Inch W x 7.75 Inch D x 4 Inch H) //  // Materials: Mango Wood & Enamel // Finish Code: , Finish Name: Natural Wood Finish / White Enamel //  // CBM: 0.13 // Number of Shipping Boxes: 1 // Materpack Contains: 2 //***ISTA 3A PACKAGING REQUIRED*** // Material Wood"
-                },
-                "AB-309345-M-WH": {
-                    nama: "Tablescape",
-                    kategori: "Home Accents",
-                    gambar: "https://6694454.app.netsuite.com/c.6694454/item-images/AB-309345-M-WH_001.jpg",
-                    keterangan: " V309 H.N. Handicrafts Inactive 37417 // Medium Enamel and Mangowood Round Bowl With Gold Base, 12.75 Inch W, White/Gold/Natural, (12.75 Inch W x 12.75 Inch D x 6 Inch H) //  // Finish Name: Natural Wood Finish / White Enamel / Gold Metal Finish //  // CBM: 0.146 // Number of Shipping Boxes: 1 // Materpack Contains: 4 //***ISTA 3A PACKAGING REQUIRED*** // Material Wood"
-                },
-                "AB-309387-L-WH": {
-                    nama: "Tablescape",
-                    kategori: "Home Accents",
-                    gambar: "https://6694454.app.netsuite.com/c.6694454/item-images/AB-309387-L-WH_001.jpg",
-                    keterangan: " V309 H.N. Handicrafts Inactive 37418 // Large Enamel and Mangowood Round Bowl With Gold Base, 16 Inch W, White/Gold/Natural, (16 Inch W x 16 Inch D x 7.25 Inch H) // Finish Name: Natural Wood Finish / White Enamel / Gold Metal Finish //  // CBM: 0.1183 // Number of Shipping Boxes: 1 // Materpack Contains: 2 //***ISTA 3A PACKAGING REQUIRED*** // Material Wood"
-                },
-                "AB-309610-M-BL": {
-                    nama: "Tablescape",
-                    kategori: "Home Accents",
-                    gambar: "https://6694454.app.netsuite.com/c.6694454/item-images/AB-309610-M-BL_001.jpg",
-                    keterangan: " V309 H.N. Handicrafts Inactive 37764 // Medium Enamel and Mangowood Boat Bowl, 24 Inch W, Blue/Natural, (24 Inch W x 7.75 Inch D x 4 Inch H) // Finish Name: Natural Wood Finish / Blue Enamel //  // CBM: 0.1553 // Number of Shipping Boxes: 1 // Materpack Contains: 6 //***ISTA 3A PACKAGING REQUIRED*** // Material 0"
-                },
-                "AB-309645-L-BL": {
-                    nama: "Tablescape",
-                    kategori: "Home Accents",
-                    gambar: "https://6694454.app.netsuite.com/c.6694454/item-images/AB-309645-L-BL_001.jpg",
-                    keterangan: " V309 H.N. Handicrafts Inactive 37764 L // Large Enamel and Mangowood Boat Bowl, 28.5 Inch W, Blue/Natural, (28.5 Inch W x 8 Inch D x 4.5 Inch H) // Finish Name: Natural Wood Finish / Blue Enamel //  // CBM: 0.1286 // Number of Shipping Boxes: 1 // Materpack Contains: 4 //***ISTA 3A PACKAGING REQUIRED*** // Material 0"
                 },
                 "AB-309757-M-WH": {
                     nama: "Tablescape",
@@ -6910,7 +6919,7 @@
                     gambar: "https://6694454.app.netsuite.com/c.6694454/item-images/NS-68445-BKV_001.jpg",
                     keterangan: " V68 PT. FURNILAC PRIMAGUNA Chester 2 Drawer Nightstand With Shelf And Mosaic Doors, 28 Inch W, Black (28W Inch  x 15D Inch  x 26H Inch ) // Materials: Wood+Mdf+Veneer Meranti+Mosaic Wood Block Drawers+Metal Rails+Metal Pull Handle // Finish Code: Solid Black - Pull Handle: BJ-056/K, Finish Name: Solid Black - Pull Handle: Antique Gold // Set Up // CBM: 0.29 // Number of Shipping Boxes: 1 // ***DROPSHIP PACKAGING REQUIRED*** // ***ISTA 3A PACKAGING REQUIRED***"
                 },
-                 "NS-68445-WHV": {
+                "NS-68445-WHV": {
                     nama: "Night Stand",
                     kategori: "Bedroom",
                     gambar: "https://6694454.app.netsuite.com/c.6694454/item-images/NS-68445-WHV_001.jpg",
@@ -10616,9 +10625,7 @@
                 showItem(currentIndex);
             };
 
-
             /* ================= SEARCH ================= */
-
             KodeSearch.oninput = function () {
                 const term = this.value.trim().toUpperCase();
                 if (!term) { resetGallery(); return; }
@@ -10690,13 +10697,33 @@
                 window.location.href = "https://boetepaythea-sudo.github.io/Inspection-App/";
             }
 
-            /* ================= ZOOM ================= */
+            /* ================= IMAGE ZOOM ================= */
+            const modal = document.getElementById("imageModal");
+            const zoomImg = document.getElementById("zoomImg");
+            const closeZoom = document.getElementById("closeZoom");
 
             function toggleZoom(img) {
-                img.classList.toggle("zoomed");
+                modal.style.display = "flex";
+                zoomImg.src = img.src;
             }
-        </script>
 
+            closeZoom.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            modal.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            zoomImg.onclick = function () {
+                modal.style.display = "none";
+            }
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape") {
+                    modal.style.display = "none";
+                }
+            });
+        </script>
     </body>
 
 </html>
